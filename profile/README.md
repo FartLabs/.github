@@ -47,10 +47,7 @@ const data = (
   </>
 );
 
-Deno.writeTextFileSync(
-  "data.json",
-  JSON.stringify(data, null, 2),
-);
+console.log(data); // { animals: ["🐈", "🐕"] }
 ```
 
 ### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
