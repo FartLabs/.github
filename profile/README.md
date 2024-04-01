@@ -58,15 +58,13 @@ Deno.writeTextFileSync(
 ```ts
 import { createRouter } from "@fartlabs/rtx";
 
-if (import.meta.main) {
-  const router = createRouter()
-    .get<"id">("/animals/:id", (ctx) => {
-      return new Response(`Animal ID: ${ctx.params.id}`);
-    })
-    .default(() => new Response("Not found", { status: 404 }));
+const router = createRouter()
+  .get("/", () => {
+    return new Response("Hello, World!");
+  })
+  .default(() => new Response("Not found", { status: 404 }));
 
-  Deno.serve((request) => router.fetch(request));
-}
+Deno.serve((request) => router.fetch(request));
 ```
 
 ## Get involved
