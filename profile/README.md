@@ -1,10 +1,12 @@
-# @FartLabs - Software solutions out the wazoo 🧪
+# FartLabs - Software solutions out the wazoo 🧪
 
-We develop software out the wazoo! Our projects are designed to be fun, useful,
-and educational. We're always looking for new contributors and collaborators, so
-feel free to reach out if you're interested in joining the fun!
+We develop software out the wazoo!
 
-## Libraries on jsr.io
+Our projects are designed to be fun, useful, and educational. We're always
+looking for new contributors and collaborators, so feel free to reach out if
+you're interested in joining the fun!
+
+## Libraries
 
 _Maintaining libraries on jsr.io_ -
 [https://jsr.io/@fartlabs](https://jsr.io/@fartlabs)
@@ -17,12 +19,13 @@ _Maintaining libraries on jsr.io_ -
 
 ## More projects
 
-- [**@FartLabs/deno_blocks**](https://github.com/FartLabs/deno_blocks):
+- [**@fartlabs/deno_blocks**](https://github.com/FartLabs/deno_blocks):
   [Blockly](https://github.com/google/blockly) IDE integration with
-  [Fresh](https://github.com/denoland/fresh) and Deno Subhosting. Winner of
+  [Fresh](https://github.com/denoland/fresh) and Deno Subhosting. _Winner_ of
   [Deno Subhosting Hackathon](https://deno.com/blog/subhosting-hackathon).
-- [**@FartLabs/jsonx_docs**](https://github.com/FartLabs/jsonx_docs):
-  _Documentation website_ and _playgrounds_ for the `@fartlabs/jsonx` library.
+- [**@fartlabs/jsonx_docs**](https://github.com/FartLabs/jsonx_docs):
+  _Documentation website_ and _playgrounds_ for the
+  [`@fartlabs/jsonx`](https://github.com/FartLabs/jsonx) library.
 
 ## Quick examples
 
@@ -50,6 +53,22 @@ Deno.writeTextFileSync(
 );
 ```
 
+### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
+
+```ts
+import { createRouter } from "@fartlabs/rtx";
+
+if (import.meta.main) {
+  const router = createRouter()
+    .get<"id">("/animals/:id", (ctx) => {
+      return new Response(`Animal ID: ${ctx.params.id}`);
+    })
+    .default(() => new Response("Not found", { status: 404 }));
+
+  Deno.serve((request) => router.fetch(request));
+}
+```
+
 ## Get involved
 
 We welcome contributions! Here's how:
@@ -60,8 +79,8 @@ We welcome contributions! Here's how:
 
 ## License
 
-(See each repository's LICENSE file for details)
+See the `LICENSE` file in each repository for details.
 
 ---
 
-Maintained with ❤️ **@FartLabs**
+Maintained with ❤️ at **FartLabs** 🧪
