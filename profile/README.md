@@ -16,6 +16,8 @@ _Maintaining libraries on jsr.io_ -
 - [**@fartlabs/rt**](https://github.com/FartLabs/rt): Minimal HTTP router
   library based on the
   [URLPattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
+- [**@fartlabs/rtx**](https://github.com/FartLabs/rt): jsonx components for
+  composing `@fartlabs/rt` routers.
 
 ## More projects
 
@@ -66,13 +68,18 @@ Deno.serve((request) => router.fetch(request));
 
 ### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
 
-rtx is a minimal HTTP router library based on the URLPattern API in JSX via
-[`@fartlabs/jsonx`](https://github.com/FartLabs/jsonx).
+```tsx
+import { Get, Router } from "@fartlabs/rtx";
 
-```ts
-import { Get } from "@fartlabs/rtx";
-
-const router = <Get pattern="/" handle={() => new Response("Hello, World!")} />;
+const router = (
+  <Router default={() => new Response("Not found", { status: 404 })}>
+    <Get
+      pattern="/"
+      handle={() =>
+        new Response("Hello, World!")}
+    />
+  </Router>
+);
 
 Deno.serve((request) => router.fetch(request));
 ```
