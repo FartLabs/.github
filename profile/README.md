@@ -13,7 +13,7 @@ _Maintaining libraries on jsr.io_ -
 
 - [**@fartlabs/jsonx**](https://github.com/FartLabs/jsonx): Cross-runtime JSX
   runtime and compiler library for composing JSON data.
-- [**@fartlabs/rtx**](https://github.com/FartLabs/rtx): Minimal HTTP router
+- [**@fartlabs/rt**](https://github.com/FartLabs/rt): Minimal HTTP router
   library based on the
   [URLPattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
 
@@ -50,10 +50,10 @@ const data = (
 console.log(data); // { animals: ["🐈", "🐕"] }
 ```
 
-### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
+### [@fartlabs/rt](https://gihub.com/FartLabs/rt)
 
 ```ts
-import { createRouter } from "@fartlabs/rtx";
+import { createRouter } from "@fartlabs/rt";
 
 const router = createRouter()
   .get("/", () => {
@@ -64,13 +64,26 @@ const router = createRouter()
 Deno.serve((request) => router.fetch(request));
 ```
 
+### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
+
+rtx is a minimal HTTP router library based on the URLPattern API in JSX via
+[`@fartlabs/jsonx`](https://github.com/FartLabs/jsonx).
+
+```ts
+import { Get } from "@fartlabs/rtx";
+
+const router = <Get pattern="/" handle={() => new Response("Hello, World!")} />;
+
+Deno.serve((request) => router.fetch(request));
+```
+
 ## Get involved
 
 We welcome contributions! Here's how:
 
-- **Raise an issue:** Report bugs or suggest new features.
-- **Submit a pull request:** Directly improve our code.
-- **Join our community:** Discussions are open for questions and collaborations.
+- **Raise an issue**: Report bugs or suggest new features.
+- **Submit a pull request**: Directly improve our code.
+- **Join our community**: Discussions are open for questions and collaborations.
 
 ## License
 
