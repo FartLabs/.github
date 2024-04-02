@@ -16,8 +16,8 @@ _Maintaining libraries on jsr.io_ -
 - [**@fartlabs/rt**](https://github.com/FartLabs/rt): Minimal HTTP router
   library based on the
   [URLPattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
-- [**@fartlabs/rtx**](https://github.com/FartLabs/rt): jsonx components for
-  composing `@fartlabs/rt` routers.
+- [**@fartlabs/rtx**](https://github.com/FartLabs/rtx): Library of
+  `@fartlabs/jsonx` components for composing `@fartlabs/rt` routers.
 
 ## More projects
 
@@ -26,7 +26,7 @@ _Maintaining libraries on jsr.io_ -
   [Fresh](https://github.com/denoland/fresh) and Deno Subhosting. _Winner_ of
   [Deno Subhosting Hackathon](https://deno.com/blog/subhosting-hackathon).
 - [**@fartlabs/jsonx_docs**](https://github.com/FartLabs/jsonx_docs):
-  _Documentation website_ and _playgrounds_ for the
+  Documentation website and online code editor for the
   [`@fartlabs/jsonx`](https://github.com/FartLabs/jsonx) library.
 
 ## Quick examples
