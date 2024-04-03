@@ -15,9 +15,11 @@ _Maintaining libraries on jsr.io_ -
 
 - [**@fartlabs/jsonx**](https://github.com/FartLabs/jsonx): Cross-runtime JSX
   runtime and compiler library for composing JSON data.
-- [**@fartlabs/rtx**](https://github.com/FartLabs/rtx): Minimal HTTP router
+- [**@fartlabs/rt**](https://github.com/FartLabs/rt): Minimal HTTP router
   library based on the
   [URLPattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
+- [**@fartlabs/rtx**](https://github.com/FartLabs/rtx): Library of
+  `@fartlabs/jsonx` components for composing `@fartlabs/rt` routers.
 
 ## More projects
 
@@ -26,7 +28,7 @@ _Maintaining libraries on jsr.io_ -
   [Fresh](https://github.com/denoland/fresh) and Deno Subhosting. _Winner_ of
   [Deno Subhosting Hackathon](https://deno.com/blog/subhosting-hackathon).
 - [**@fartlabs/jsonx_docs**](https://github.com/FartLabs/jsonx_docs):
-  _Documentation website_ and _playgrounds_ for the
+  Documentation website and online code editor for the
   [`@fartlabs/jsonx`](https://github.com/FartLabs/jsonx) library.
 
 ## Quick examples
@@ -49,26 +51,39 @@ const data = (
   </>
 );
 
-Deno.writeTextFileSync(
-  "data.json",
-  JSON.stringify(data, null, 2),
-);
+console.log(data); // { animals: ["🐈", "🐕"] }
+```
+
+### [@fartlabs/rt](https://gihub.com/FartLabs/rt)
+
+```ts
+import { createRouter } from "@fartlabs/rt";
+
+const router = createRouter()
+  .get("/", () => {
+    return new Response("Hello, World!");
+  })
+  .default(() => new Response("Not found", { status: 404 }));
+
+Deno.serve((request) => router.fetch(request));
 ```
 
 ### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
 
-```ts
-import { createRouter } from "@fartlabs/rtx";
+```tsx
+import { Get, Router } from "@fartlabs/rtx";
 
-if (import.meta.main) {
-  const router = createRouter()
-    .get<"id">("/animals/:id", (ctx) => {
-      return new Response(`Animal ID: ${ctx.params.id}`);
-    })
-    .default(() => new Response("Not found", { status: 404 }));
+const router = (
+  <Router default={() => new Response("Not found", { status: 404 })}>
+    <Get
+      pattern="/"
+      handle={() =>
+        new Response("Hello, World!")}
+    />
+  </Router>
+);
 
-  Deno.serve((request) => router.fetch(request));
-}
+Deno.serve((request) => router.fetch(request));
 ```
 
 ## Get involved
