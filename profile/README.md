@@ -96,7 +96,7 @@ We welcome contributions! Here's how:
 
 ### Discord
 
-Reach out to us on Discord <https://discord.gg/W39PG9t3nZ>.
+Reach out to us on Discord: <https://discord.gg/W39PG9t3nZ>.
 
 ## License
 
