@@ -1,3 +1,5 @@
+[![Discord invite](https://dcbadge.vercel.app/api/server/W39PG9t3nZ?style=flat)](https://discord.gg/W39PG9t3nZ)
+
 # FartLabs - Software solutions out the wazoo 🧪
 
 We develop software out the wazoo!
@@ -76,6 +78,10 @@ We welcome contributions! Here's how:
 - **Raise an issue:** Report bugs or suggest new features.
 - **Submit a pull request:** Directly improve our code.
 - **Join our community:** Discussions are open for questions and collaborations.
+
+### Discord
+
+Reach out to us on Discord <https://discord.gg/W39PG9t3nZ>.
 
 ## License
 
