@@ -54,6 +54,8 @@ const data = (
 console.log(data); // { animals: ["🐈", "🐕"] }
 ```
 
+Curious about jsonx? [Learn more...](https://jsonx.deno.dev)
+
 ### [@fartlabs/rt](https://gihub.com/FartLabs/rt)
 
 ```ts
