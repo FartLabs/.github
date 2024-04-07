@@ -15,6 +15,10 @@ _Maintaining libraries on jsr.io_ -
 
 - [**@fartlabs/jsonx**](https://github.com/FartLabs/jsonx): Cross-runtime JSX
   runtime and compiler library for composing JSON data.
+- [**@fartlabs/ht**](https://github.com/FartLabs/ht): Type-safe HTML rendering
+  library for Deno.
+- [**@fartlabs/htx**](https://github.com/FartLabs/htx): Library of
+  `@fartlabs/jsonx` components for composing HTML content.
 - [**@fartlabs/rt**](https://github.com/FartLabs/rt): Minimal HTTP router
   library based on the
   [URLPattern API](https://developer.mozilla.org/en-US/docs/Web/API/URL_Pattern_API).
@@ -56,7 +60,33 @@ console.log(data); // { animals: ["🐈", "🐕"] }
 
 Curious about jsonx? [Learn more...](https://jsonx.deno.dev)
 
-### [@fartlabs/rt](https://gihub.com/FartLabs/rt)
+### [@fartlabs/ht](https://github.com/FartLabs/ht)
+
+```ts
+import { a } from "@fartlabs/ht";
+
+const html = a({ href: "https://example.com" }, "Hello, world!");
+
+Deno.writeTextFileSync("index.html", html);
+```
+
+### [@fartlabs/htx](https://github.com/FartLabs/htx)
+
+```tsx
+import { A, BODY, H1, P } from "@fartlabs/htx";
+
+const html = (
+  <BODY>
+    <H1>Hello, World!</H1>
+    <P>This is a paragraph.</P>
+    <A href="https://jsr.io/@fartlabs/htx">@fartlabs/htx</A>
+  </BODY>
+);
+
+Deno.writeTextFileSync("index.html", html);
+```
+
+### [@fartlabs/rt](https://github.com/FartLabs/rt)
 
 ```ts
 import { createRouter } from "@fartlabs/rt";
@@ -70,7 +100,7 @@ const router = createRouter()
 Deno.serve((request) => router.fetch(request));
 ```
 
-### [@fartlabs/rtx](https://gihub.com/FartLabs/rtx)
+### [@fartlabs/rtx](https://github.com/FartLabs/rtx)
 
 ```tsx
 import { Get, Router } from "@fartlabs/rtx";
