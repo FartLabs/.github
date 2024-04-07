@@ -1,4 +1,4 @@
-[![Discord invite](https://dcbadge.vercel.app/api/server/W39PG9t3nZ?style=flat)](https://discord.gg/W39PG9t3nZ)
+[![Discord invite](https://dcbadge.vercel.app/api/server/W39PG9t3nZ?style=flat)](https://go.fart.tools/chat)
 
 # FartLabs - Software solutions out the wazoo 🧪
 
@@ -94,9 +94,9 @@ We welcome contributions! Here's how:
 - **Submit a pull request:** Directly improve our code.
 - **Join our community:** Discussions are open for questions and collaborations.
 
-### Discord
+## Community
 
-Reach out to us on Discord: <https://discord.gg/W39PG9t3nZ>.
+Reach out to us on Discord: <https://go.fart.tools/chat>.
 
 ## License
 
