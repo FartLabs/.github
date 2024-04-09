@@ -30,7 +30,8 @@ _Maintaining libraries on jsr.io_ -
 - [**@fartlabs/deno_blocks**](https://github.com/FartLabs/deno_blocks):
   [Blockly](https://github.com/google/blockly) IDE integration with
   [Fresh](https://github.com/denoland/fresh) and Deno Subhosting. _Winner_ of
-  [Deno Subhosting Hackathon](https://deno.com/blog/subhosting-hackathon).
+  [Deno Subhosting Hackathon](https://deno.com/blog/subhosting-hackathon) (Ryan
+  Dahl's favorite).
 - [**@fartlabs/jsonx_docs**](https://github.com/FartLabs/jsonx_docs):
   Documentation website and online code editor for the
   [`@fartlabs/jsonx`](https://github.com/FartLabs/jsonx) library.
@@ -65,7 +66,7 @@ Curious about jsonx? [Learn more...](https://jsonx.deno.dev)
 ```ts
 import { a } from "@fartlabs/ht";
 
-const html = a({ href: "https://example.com" }, "Hello, world!");
+const html = a({ href: "https://jsr.io/@fartlabs/ht" }, "@fartlabs/ht");
 
 Deno.writeTextFileSync("index.html", html);
 ```
@@ -92,9 +93,7 @@ Deno.writeTextFileSync("index.html", html);
 import { createRouter } from "@fartlabs/rt";
 
 const router = createRouter()
-  .get("/", () => {
-    return new Response("Hello, World!");
-  })
+  .get("/", () => new Response("Hello, World!"))
   .default(() => new Response("Not found", { status: 404 }));
 
 Deno.serve((request) => router.fetch(request));
