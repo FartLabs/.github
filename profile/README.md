@@ -90,9 +90,9 @@ Deno.writeTextFileSync("index.html", html);
 ### [@fartlabs/rt](https://github.com/FartLabs/rt)
 
 ```ts
-import { createRouter } from "@fartlabs/rt";
+import { Router } from "@fartlabs/rt";
 
-const router = createRouter()
+const router = new Router()
   .get("/", () => new Response("Hello, World!"))
   .default(() => new Response("Not found", { status: 404 }));
 
